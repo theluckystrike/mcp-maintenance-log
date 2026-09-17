@@ -1,0 +1,22 @@
+{
+  "name": "mcp-maintenance-log",
+  "version": "0.22.0",
+  "description": "MCP server for an equipment maintenance log and schedule: service entries, costs, and what is due or overdue. Equipment maintenance log: assets, service entries with costs, and a due report computed from stored dates.",
+  "settings": [
+    {
+      "name": "mcp.zovo.one token",
+      "description": "A free anonymous token from https://mcp.zovo.one/mcp/token, or your Pro key. One token is one data space, and it is refreshed for another 30 days on every write.",
+      "envVar": "ZOVO_MCP_TOKEN",
+      "sensitive": true
+    }
+  ],
+  "mcpServers": {
+    "maintenance-log": {
+      "httpUrl": "https://mcp.zovo.one/mcp/maintenance-log",
+      "headers": {
+        "Authorization": "Bearer ${ZOVO_MCP_TOKEN}"
+      },
+      "description": "Equipment maintenance log: assets, service entries with costs, and a due report computed from stored dates."
+    }
+  }
+}
